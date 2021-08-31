@@ -1,0 +1,56 @@
+{
+	"threads": 2,
+	"coin": "eth-pps",
+    "name": "main",
+
+	"pool": "BaikalMine",
+	"url": "eth-pps.baikalmine.com:4040",
+	"wallet": "0x0cdcc2fa18378f5764cb3d135072199c96e578d7",
+	"worker": "test",
+
+	"proxy": {
+		"enabled": true,
+		"listen": "0.0.0.0:8247",
+		"limitHeadersSize": 1024,
+		"limitBodySize": 256,
+		"behindReverseProxy": false,
+		"stateUpdateInterval": "3s",
+		"sendDataInterval": "25s",
+		"hashrateExpiration": "1h",
+
+		"healthCheck": true,
+		"maxFails": 100,
+
+
+		 "stratum": [{
+                        "name": "4G",
+                        "enabled": true,
+                        "listen": "0.0.0.0:1515",
+                        "timeout": "120s",
+                        "maxConn": 8192
+                }]
+
+	},
+
+	"api": {
+		"enabled": true,
+		"purgeOnly": false,
+		"purgeInterval": "1m",
+		"listen": "127.0.0.1:3246",
+		"statsCollectInterval": "15s",
+		"hashrateWindow": "30m",
+		"hashrateLargeWindow": "3h",
+		"minerCharts":"*/10 * * * *",
+		"minerChartsNum":74,
+		"shareCharts":"*/60 * * * *",
+		"shareChartsNum":24
+},
+
+"redis": {
+	"endpoint": "127.0.0.1:6379",
+	"poolSize": 100,
+	"database": 0,
+	"password": ""
+}
+
+}
